@@ -2,7 +2,7 @@ from python:3.7.7-slim
 WORKDIR /home/app
 COPY /angular/package.json /home/app/package.json
 RUN apt-get update
-RUN apt-get -y install curl gnupg
+RUN apt-get -y install curl gnupg libpq-dev python3-dev
 RUN curl -sL https://deb.nodesource.com/setup_12.16  | bash -
 RUN apt-get -y install nodejs
 
