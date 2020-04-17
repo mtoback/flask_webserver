@@ -2,3 +2,4 @@ flask.iml
 __pycache__
 templates/
 .idea/
+secrets.yml

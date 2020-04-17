@@ -1,7 +1,7 @@
-from test_flask import TestFlask
+from test_flask import TestFlaskDB
 import unittest
 def run_tests():
-    test_classes_to_run = [TestFlask]
+    test_classes_to_run = [TestFlaskDB]
 
     loader = unittest.TestLoader()
 
