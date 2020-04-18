@@ -9,10 +9,6 @@ from school_data import SchoolData
 from company_data import CompanyData
 
 # Use the route() decorator to bind a function to a URL.
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/api/tests')
 def getTestResults():
     return run_tests()
