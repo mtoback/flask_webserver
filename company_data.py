@@ -18,7 +18,7 @@ class CompanyData:
                            'location': 'South San Francisco, Ca',
                            'date': '2017-04-15 - 2020-03-15',
                            'business': 'biotech',
-                           'description': 'MBP Titan was trying to build a platform for extracting chemicals from bacteria. '
+                           'description': 'The MBP Titan division was trying to build a platform for creating chemicals from bacteria. '
                                           'My job was to work with the scientists who were performing screening on the bacteria and help them manage their workflow'}
         elif companyName == 'chordiant':
             companyData = {'name': 'Chordiant (Now Pegasystems)',
