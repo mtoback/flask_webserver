@@ -1,6 +1,10 @@
+#!/usr/bin/env python
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String
+'''
+SQLAlchemy table definitions
+'''
 base = declarative_base()
 
 class Company (base):

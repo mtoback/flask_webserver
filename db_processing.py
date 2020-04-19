@@ -1,12 +1,21 @@
+#!/usr/bin/env python
+
 import json
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from db_tables import Company, School
 from secret_data import SecretData
-from sqlalchemy_encoder import SQLAlchemyEncoder
 
-
+'''
+initial database processing class
+contains the interface to sqlalchemy via ORM queries
+'''
 class DBProcessing():
+    '''
+    initialize the class by opening a session to the database,
+    getting the database string from the secrets file
+    '''
     def __init__(self):
         secretData = SecretData()
         db_string = secretData.getValue('db_string')

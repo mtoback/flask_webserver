@@ -1,5 +1,16 @@
+#!/usr/bin/env python
+
 from test_flask import TestFlaskDB
 import unittest
+
+
+'''
+wrapper function to execute test suite and return statistics as a json object
+which can then be sent over the internet.
+
+The only change one must make is to add new test classes 
+to the test_classes_to_run variable
+'''
 def run_tests():
     test_classes_to_run = [TestFlaskDB]
 

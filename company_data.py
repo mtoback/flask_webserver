@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+'''
+hardcoded company info data used before database was built
+'''
 class CompanyData:
     def __init__(self):
         pass

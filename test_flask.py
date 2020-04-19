@@ -1,6 +1,12 @@
+#!/usr/bin/env python
+
 import unittest
 from school_data import SchoolData
 from company_data import CompanyData
+
+'''
+unit tests for school and company data retrieval
+'''
 class TestFlaskDB(unittest.TestCase):
     def test_school_success_rpi(self):
         schoolData = SchoolData()

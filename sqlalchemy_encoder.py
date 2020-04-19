@@ -1,8 +1,15 @@
+#!/usr/bin/env python
+
 import json
 
 from sqlalchemy.ext.declarative import DeclarativeMeta
 
-
+'''
+special class to convert sqlalchemy objects into json objects
+note the simple 'hack' to handle date objects, needed because they
+are not serializable. In a future iteration one might need to do more
+than just convert to a string
+'''
 class SQLAlchemyEncoder(json.JSONEncoder):
 
     def default(self, obj):
