@@ -16,7 +16,7 @@ class CompanyData:
         if companyName == 'intrexon':
             companyData = {'name': 'Intrexon, Inc (Now Precigen)',
                            'location': 'South San Francisco, Ca',
-                           'date': '2017-04-15 - 2020-03-15',
+                           'date': '2017-05-15 - 2020-04-15',
                            'business': 'biotech',
                            'description': 'The MBP Titan division was trying to build a platform for creating chemicals from bacteria. '
                                           'My job was to work with the scientists who were performing screening on the bacteria and help them manage their workflow'}
