@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
 import unittest
-from school_data import SchoolData
-from company_data import CompanyData
-
+#from school_data import SchoolData
+#from company_data import CompanyData
+from db_processing import DBProcessing
 '''
 unit tests for school and company data retrieval
 '''
 class TestFlaskDB(unittest.TestCase):
     def test_school_success_rpi(self):
-        schoolData = SchoolData()
+        schoolData = DBProcessing()
         result = schoolData.getSchoolInfo('rpi')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -23,7 +23,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_school_success_cmu(self):
-        schoolData = SchoolData()
+        schoolData = DBProcessing()
         result = schoolData.getSchoolInfo('cmu')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -37,7 +37,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_school_fail(self):
-        schoolData = SchoolData()
+        schoolData = DBProcessing()
         result = schoolData.getSchoolInfo('ineverwentthere')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -51,7 +51,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_chordiant(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('chordiant')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -65,7 +65,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_llnl(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('llnl')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -79,7 +79,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_vmware(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('vmware')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -93,7 +93,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_gte(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('gte')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -106,7 +106,7 @@ class TestFlaskDB(unittest.TestCase):
                          'expected "GTE Government Systems" instead got %s'
                          % result['name'])
     def test_company_success_oceania(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('oceania')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -120,7 +120,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_niosh(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('niosh')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -134,7 +134,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_success_attorney(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('attorney')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")
@@ -148,7 +148,7 @@ class TestFlaskDB(unittest.TestCase):
                          % result['name'])
 
     def test_company_fail(self):
-        companyData = CompanyData()
+        companyData = DBProcessing()
         result = companyData.getCompanyInfo('neverworkedthere')
         self.assertTrue(result is not None, "expected a result object")
         self.assertTrue(type(result) == dict, "expected a dictionary")

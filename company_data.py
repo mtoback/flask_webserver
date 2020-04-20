@@ -39,7 +39,7 @@ class CompanyData:
                                           'I also worked as a programmer and tester on the VxRail product.'}
         elif companyName == 'oceania':
             companyData = {'name': 'Oceania',
-                           'date': '2010-2017',
+                           'date': '1996-1999',
                            'location': 'Palo Alto, Ca',
                            'business': 'Medical Software',
                            'description': 'Development of an Electronic Medical Record using C/C++. Worked closely with the'

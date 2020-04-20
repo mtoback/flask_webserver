@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 
 from db_tables import Company, School
 from secret_data import SecretData
+from sqlalchemy_encoder import SQLAlchemyEncoder
 
 '''
 initial database processing class
@@ -23,8 +24,8 @@ class DBProcessing():
         self._Session = sessionmaker(_db)
         self._Session.configure(bind=_db)
 
-    def get_company(self, companyName):
-        companyValues = {'name': companyName,
+    def getCompanyInfo(self, companyName):
+        companyValuesDict = {'name': companyName,
                        'date': 'not found',
                        'location': 'not found',
                        'business': 'not found',
@@ -35,14 +36,13 @@ class DBProcessing():
             companyValues = json.dumps(companyData, cls=SQLAlchemyEncoder)
             companyValuesDict = json.loads(companyValues)
             companyValuesDict['date'] = companyValuesDict['start_date'] + ' - ' + companyValuesDict['end_date']
-            companyValues = json.dumps(companyValuesDict)
-        return companyValues
+        return companyValuesDict
 
-    def get_school(self, schoolName):
-        schoolValues = {'name': schoolName,
+    def getSchoolInfo(self, schoolName):
+        schoolValuesDict = {'name': schoolName,
                          'date': 'not found',
                          'location': 'not found',
-                         'business': 'not found',
+                         'degree': 'not found',
                          'description': 'not found'}
         session = self._Session()
         schoolData = session.query(School).filter(School.key_name == schoolName).first()
@@ -50,8 +50,7 @@ class DBProcessing():
             schoolValues = json.dumps(schoolData, cls=SQLAlchemyEncoder)
             schoolValuesDict = json.loads(schoolValues)
             schoolValuesDict['date'] = schoolValuesDict['start_date'] + ' - ' + schoolValuesDict['end_date']
-            schoolValues = json.dumps(schoolValuesDict)
-        return schoolValues
+        return schoolValuesDict
 
 if __name__ == "__main__":
     dbProc = DBProcessing()

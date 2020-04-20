@@ -14,6 +14,7 @@ class Company (base):
     location = Column(String)
     start_date = Column(String)
     end_date = Column(String)
+    description = Column(String)
     business = Column(String)
 
 class School (base):
@@ -23,4 +24,5 @@ class School (base):
     location = Column(String)
     start_date = Column(String)
     end_date = Column(String)
+    description = Column(String)
     degree = Column(String)
