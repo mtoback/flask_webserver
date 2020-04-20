@@ -1,8 +1,9 @@
-from python:3.7.7-slim
+from python:3.7.7
 WORKDIR /home/app
-
 COPY requirements.txt requirements.txt
 run pip install -r requirements.txt
+COPY secrets.yml secrets.yml
+COPY secret_data.py secret_data.py
 COPY main.py main.py
 COPY company_data.py company_data.py
 COPY db_processing.py db_processing.py
