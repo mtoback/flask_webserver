@@ -24,14 +24,15 @@ class DBProcessing():
         self._Session = sessionmaker(_db)
         self._Session.configure(bind=_db)
 
-    def getCompanyInfo(self, companyName):
-        companyValuesDict = {'name': companyName,
+    def getCompanyInfo(self, company_name):
+        companyValuesDict = {'name': company_name,
                        'date': 'not found',
                        'location': 'not found',
                        'business': 'not found',
                        'description': 'not found'}
         session = self._Session()
-        companyData = session.query(Company).filter(Company.key_name == companyName).first()
+        query = session.query(Company).filter(Company.key_name == company_name)
+        companyData = query.first()
         if companyData:
             companyValues = json.dumps(companyData, cls=SQLAlchemyEncoder)
             companyValuesDict = json.loads(companyValues)

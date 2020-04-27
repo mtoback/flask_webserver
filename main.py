@@ -10,16 +10,16 @@ from school_data import SchoolData
 from company_data import CompanyData
 from db_processing import DBProcessing
 # Use the route() decorator to bind a function to a URL.
-@app.route('/api/tests')
+@app.route('/api/python/tests')
 def getTestResults():
     return run_tests()
 
-@app.route('/api/school/<schoolname>')
+@app.route('/api/python/school/<schoolname>')
 def getSchoolInfo(schoolname):
     schoolData = DBProcessing()
     return dumps(schoolData.getSchoolInfo(schoolname))
 
-@app.route('/api/company/<companyname>')
+@app.route('/api/python/company/<companyname>')
 def getCompanyInfo(companyname):
     companyData = DBProcessing()
     return dumps(companyData.getCompanyInfo(companyname))
